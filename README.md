@@ -1,6 +1,6 @@
 # Soul Activism
 
-Website for **Soul Activism** (soulactivism.com): Akashic Records readings, the Psychic Development Course, and Soul Sync intuitive business consulting with Zan Dean in Asheville, NC.
+Website for **Soul Activism** (www.soulactivism.com): Akashic Records readings, the Psychic Development Course, and Soul Sync intuitive business consulting with Zan Dean in Asheville, NC.
 
 A static, hand-authored HTML/CSS rebuild of the original Wix Studio site, hosted on GitHub Pages. No build step and no Wix scripts.
 
@@ -23,7 +23,7 @@ policies-and-terms/             Disclaimer, refund, accessibility, terms, privac
 css/style.css                   All styles (palette + fonts at the top)
 js/main.js                      Mobile menu + contact form mailto fallback
 images/                         Site images (WebP)
-CNAME                           soulactivism.com
+CNAME                           www.soulactivism.com
 .nojekyll                       Serve files as-is
 ```
 
@@ -46,7 +46,7 @@ Then open http://localhost:8000
 ## Deploy
 
 1. Repo Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ (root)`.
-2. Settings → Pages → Custom domain: `soulactivism.com` (the `CNAME` file is already here).
+2. Settings → Pages → Custom domain: `www.soulactivism.com` (the `CNAME` file is already here; the bare domain redirects to www).
 3. At the DNS host for soulactivism.com:
    - Apex: four `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `www`: `CNAME` → `sibyldigital.github.io`
