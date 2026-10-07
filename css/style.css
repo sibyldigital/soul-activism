@@ -287,12 +287,17 @@ a.paper-title:hover { transform: rotate(-1deg) scale(1.01); }
 .form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form .full { grid-column: 1 / -1; }
 .form label { display: block; font-size: 0.9rem; margin-bottom: 6px; }
-.form input, .form textarea {
+.form input, .form textarea, .form select {
   width: 100%; font: inherit; color: var(--ink); background: var(--white);
   border: 1px solid var(--line-dark); border-radius: 4px; padding: 12px 14px;
 }
-.form input:focus, .form textarea:focus { outline: 2px solid var(--rose); outline-offset: 1px; }
+.form input:focus, .form textarea:focus, .form select:focus { outline: 2px solid var(--rose); outline-offset: 1px; }
 .form textarea { min-height: 150px; resize: vertical; }
+.form select { appearance: auto; }
+.form .consent { display: flex; gap: 12px; align-items: flex-start; }
+.form .consent input { width: 18px; height: 18px; margin-top: 3px; flex: none; }
+.form .consent label { font-size: 0.85rem; margin: 0; }
+.form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .form-note { font-size: 0.85rem; color: var(--muted); }
 
 /* ---------- Footer ---------- */

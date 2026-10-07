@@ -9,21 +9,32 @@
     });
   }
 
-  // GitHub Pages can't process forms. Until a form backend (Formspree, Basin…)
-  // is wired into the form's action, open the visitor's mail client instead.
+  // GitHub Pages can't process forms. With a Formspree ID in data-formspree the
+  // form posts to Formspree; without one, open the visitor's mail client with
+  // every answer filled in.
   var form = document.querySelector('form[data-mailto]');
-  if (form && !form.getAttribute('action')) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var d = new FormData(form);
-      var name = [d.get('first_name'), d.get('last_name')].filter(Boolean).join(' ');
-      var body = 'Name: ' + name + '\nEmail: ' + (d.get('email') || '') +
-        '\nPhone: ' + (d.get('phone') || '') + '\n\n' + (d.get('message') || '');
-      window.location.href = 'mailto:' + form.getAttribute('data-mailto') +
-        '?subject=' + encodeURIComponent('Soul Activism inquiry from ' + (name || 'website')) +
-        '&body=' + encodeURIComponent(body);
-      var thanks = form.querySelector('.form-thanks');
-      if (thanks) thanks.hidden = false;
-    });
+  if (form) {
+    var fsId = (form.getAttribute('data-formspree') || '').trim();
+    if (fsId) {
+      form.action = 'https://formspree.io/f/' + fsId;
+    } else {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var lines = [];
+        Array.prototype.forEach.call(form.elements, function (el) {
+          if (!el.name || el.name.charAt(0) === '_' || el.type === 'submit') return;
+          if (el.type === 'checkbox' && !el.checked) return;
+          var label = form.querySelector('label[for="' + el.id + '"]');
+          var title = el.type === 'checkbox' ? 'Consent' : label ? label.textContent.replace(/\s*\*$/, '').split('.')[0] : el.name;
+          lines.push(title + ':\n' + el.value + '\n');
+        });
+        var name = form.elements.name ? form.elements.name.value : '';
+        window.location.href = 'mailto:' + form.getAttribute('data-mailto') +
+          '?subject=' + encodeURIComponent('Soul Activism reading request from ' + (name || 'website')) +
+          '&body=' + encodeURIComponent(lines.join('\n'));
+        var thanks = form.querySelector('.form-thanks');
+        if (thanks) thanks.hidden = false;
+      });
+    }
   }
 })();

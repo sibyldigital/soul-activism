@@ -35,14 +35,30 @@
 <section class="band-forest hero"><div class="wrap"><div class="paper-title" style="background-image:url(../images/paper-pink-flower.webp);--ar:2.14;--inner:62cqw;--shift:4cqw;--script-size:18cqw;width:min(720px,100%)"><span class="script">Connect</span><p class="sub">Fill in your info and Zan will be in touch</p></div></div></section>
 <section class="band band-lavender">
   <div class="narrow">
-    <form class="form" data-mailto="info@soulactivism.com">
-      <div><label for="first_name">First name</label><input id="first_name" name="first_name" autocomplete="given-name"></div>
-      <div><label for="last_name">Last name</label><input id="last_name" name="last_name" autocomplete="family-name"></div>
+    <!-- Formspree: paste your form ID (the part after /f/ in your Formspree
+         endpoint) into data-formspree. Until then, Submit opens the visitor's
+         email app with their answers filled in. -->
+    <form class="form" method="POST" data-formspree="" data-mailto="info@soulactivism.com">
+      <input type="hidden" name="_subject" value="New Soul Activism reading request">
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div><label for="name">Name *</label><input id="name" name="name" required autocomplete="name"></div>
       <div><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
-      <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
-      <div class="full"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
+      <div><label for="birth-date">Birth date *</label><input id="birth-date" name="birth-date" type="date" required></div>
+      <div><label for="birth-place">Birth place *</label><input id="birth-place" name="birth-place" required placeholder="City, state/region, country"></div>
+      <div class="full"><label for="reading-type">Reading type *</label>
+        <select id="reading-type" name="reading-type" required>
+          <option value="" disabled selected>Choose a reading</option>
+          <option value="Soul Activism Reading">Soul Activism Reading</option>
+          <option value="Soul Sync">Soul Sync (Intuitive Business Consulting)</option>
+        </select></div>
+      <div class="full"><label for="manifest">What do you want to manifest in the next six months? *</label><textarea id="manifest" name="manifest" required></textarea></div>
+      <div class="full"><label for="blocks">What blocks have you been experiencing? *</label><textarea id="blocks" name="blocks" required></textarea></div>
+      <div class="full consent">
+        <input id="consent" name="consent" type="checkbox" value="I agree" required>
+        <label for="consent">I agree that Soul Activism may use the information in this form to prepare and respond to my reading request. I can withdraw this consent at any time by emailing <a href="mailto:info@soulactivism.com">info@soulactivism.com</a>. See the <a href="../policies-and-terms/#privacy-policy">Privacy Policy</a>. *</label>
+      </div>
       <div class="full"><button class="btn" type="submit">Submit</button>
-        <p class="form-thanks" hidden>Thanks for submitting! Your email app should open with your message ready to send.</p>
+        <p class="form-thanks" hidden>Thanks for submitting! Your email app should open with your answers ready to send.</p>
         <p class="form-note">Prefer email? Write to <a href="mailto:info@soulactivism.com">info@soulactivism.com</a>.</p></div>
     </form>
   </div>
