@@ -2,6 +2,16 @@
    Section rhythm follows the Wix design: misty forest hero with a torn-paper
    title, then alternating lavender / white / dark violet bands. */
 
+/* Amsterdam Three (licensed script font). Drop the webfont files into
+   /fonts as amsterdam-three.woff2 / .woff; until then the Google script
+   font below is used. */
+@font-face {
+  font-family: "Amsterdam Three";
+  src: url("../fonts/amsterdam-three.woff2") format("woff2"),
+       url("../fonts/amsterdam-three.woff") format("woff");
+  font-display: swap;
+}
+
 :root {
   --ink: #221a2e;            /* dark bands, footer, body text on light */
   --plum: #44345b;           /* deep violet band */
@@ -19,7 +29,7 @@
 
   --font-head: "Questrial", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Sora", "Helvetica Neue", Arial, sans-serif;
-  --font-script: "Mrs Saint Delafield", "Great Vibes", cursive;
+  --font-script: "Amsterdam Three", "Mrs Saint Delafield", "Great Vibes", cursive;
 
   --wrap: 1200px;
 }
