@@ -119,7 +119,8 @@ strong { font-weight: 600; }
   position: relative; container-type: inline-size;
   width: min(820px, 100%); margin-inline: auto;
   aspect-ratio: var(--ar, 2.1);
-  background: var(--paper) center / contain no-repeat;
+  background-image: var(--paper);
+  background-position: center; background-size: contain; background-repeat: no-repeat;
   filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.35));
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   padding: 0;

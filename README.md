@@ -27,7 +27,7 @@ CNAME                           www.soulactivism.com
 .nojekyll                       Serve files as-is
 ```
 
-Pages use root-relative links (`/css/style.css`), so the site must be served from the domain root.
+Pages use relative links (`../css/style.css`), so the site works both at www.soulactivism.com and at the GitHub preview address (sibyldigital.github.io/soul-activism/). Only `404.html` uses root-relative links, since GitHub serves it at any path.
 
 ## Design
 
