@@ -13,6 +13,14 @@
   // form posts to Formspree; without one, open the visitor's mail client with
   // every answer filled in.
   var form = document.querySelector('form[data-mailto]');
+
+  // Session requests can't be in the past: tomorrow at the earliest.
+  var when = document.getElementById('session-date');
+  if (when) {
+    var t = new Date(Date.now() + 864e5);
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    when.min = t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate()) + 'T09:00';
+  }
   if (form) {
     var fsId = (form.getAttribute('data-formspree') || '').trim();
     if (fsId) {

@@ -55,6 +55,6 @@ Then open http://localhost:8000
 ## Notes
 
 - **Pricing:** all readings are $200 (Soul Activism AR Reading, Soul Relationships). The Psychic Development Course is $600 and currently marked Ended.
-- **Booking:** each service's "Book Now" opens an email to info@soulactivism.com with the service name in the subject. Swap in a scheduler link (Calendly, Square, Acuity, PayPal) when ready.
+- **Booking:** each service's "Book Now" opens an email to info.soulactivism@gmail.com with the service name in the subject. Swap in a scheduler link (Calendly, Square, Acuity, PayPal) when ready.
 - **Contact form:** the Connect page asks for name, email, birth date, birth place, reading type (Soul Activism Reading or Soul Sync), what they want to manifest in the next six months, and the blocks they have been experiencing. Put the Formspree form ID in `data-formspree` on the form in `connect/index.html` and it posts to Formspree; with it empty, Submit opens the visitor's mail client with the answers filled in.
 - **Policies:** the business is named Soul Activism throughout, and a cancellation less than 48 hours before a session forfeits 100% of the fee. Crisis resources list the 988 Suicide & Crisis Lifeline.

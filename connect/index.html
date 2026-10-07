@@ -38,11 +38,13 @@
     <!-- Formspree: paste your form ID (the part after /f/ in your Formspree
          endpoint) into data-formspree. Until then, Submit opens the visitor's
          email app with their answers filled in. -->
-    <form class="form" method="POST" data-formspree="mbgdggog" data-mailto="info@soulactivism.com">
+    <form class="form" method="POST" data-formspree="mbgdggog" data-mailto="info.soulactivism@gmail.com">
       <input type="hidden" name="_subject" value="New Soul Activism reading request">
       <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div><label for="name">Name *</label><input id="name" name="name" required autocomplete="name"></div>
       <div><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
+      <div><label for="session-date">Preferred session date &amp; time *</label><input id="session-date" name="preferred-session" type="datetime-local" required></div>
       <div><label for="birth-date">Birth date *</label><input id="birth-date" name="birth-date" type="date" required></div>
       <div><label for="birth-place">Birth place *</label><input id="birth-place" name="birth-place" required placeholder="City, state/region, country"></div>
       <div class="full"><label for="reading-type">Reading type *</label>
@@ -55,11 +57,11 @@
       <div class="full"><label for="blocks">What blocks have you been experiencing? *</label><textarea id="blocks" name="blocks" required></textarea></div>
       <div class="full consent">
         <input id="consent" name="consent" type="checkbox" value="I agree" required>
-        <label for="consent">I agree that Soul Activism may use the information in this form to prepare and respond to my reading request. I can withdraw this consent at any time by emailing <a href="mailto:info@soulactivism.com">info@soulactivism.com</a>. See the <a href="../policies-and-terms/#privacy-policy">Privacy Policy</a>. *</label>
+        <label for="consent">I agree that Soul Activism may use the information in this form to prepare and respond to my reading request. I can withdraw this consent at any time by emailing <a href="mailto:info.soulactivism@gmail.com">info.soulactivism@gmail.com</a>. See the <a href="../policies-and-terms/#privacy-policy">Privacy Policy</a>. *</label>
       </div>
       <div class="full"><button class="btn" type="submit">Submit</button>
         <p class="form-thanks" hidden>Thanks for submitting! Your email app should open with your answers ready to send.</p>
-        <p class="form-note">Prefer email? Write to <a href="mailto:info@soulactivism.com">info@soulactivism.com</a>.</p></div>
+        <p class="form-note">Prefer email? Write to <a href="mailto:info.soulactivism@gmail.com">info.soulactivism@gmail.com</a>.</p></div>
     </form>
   </div>
 </section>
@@ -91,7 +93,7 @@
     </ul>
   </div>
   <div class="wrap footer-base">
-    <p class="addr">Soul Activism, Asheville, NC 28803<br><a href="mailto:info@soulactivism.com">info@soulactivism.com</a></p>
+    <p class="addr">Soul Activism, Asheville, NC 28803<br><a href="mailto:info.soulactivism@gmail.com">info.soulactivism@gmail.com</a></p>
     <p class="copy">&copy; <span id="yr">2026</span> by <a href="https://sibyldigital.com" target="_blank" rel="noopener">SIBYLDIGITAL</a></p>
   </div>
 </footer>
