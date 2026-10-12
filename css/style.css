@@ -345,3 +345,24 @@ a.paper-title:hover { transform: rotate(-1deg) scale(1.01); }
   .form { grid-template-columns: 1fr; }
   .paper-title.split-title { flex-direction: column; gap: 0; text-align: center; }
 }
+
+/* ---------- Book a Reading (stepped flow) ---------- */
+.booking { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.step-card { background: var(--white); border-radius: 8px; padding: 26px clamp(20px, 4vw, 36px); box-shadow: 0 8px 24px rgba(34, 26, 46, 0.1); transition: opacity 0.2s; }
+.step-title { display: flex; align-items: center; gap: 14px; font-size: clamp(1.3rem, 2.4vw, 1.7rem); margin: 0; }
+.step-num {
+  flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--plum); color: #fff; font-size: 1rem;
+}
+.step-body { margin-top: 20px; }
+.step-card.is-locked { opacity: 0.5; }
+.step-card.is-locked .step-num { background: var(--lilac); }
+.step-card.is-done .step-num { background: var(--rose); font-size: 0; }
+.step-card.is-done .step-num::after { content: "✓"; font-size: 1.1rem; }
+.step-card.is-done .step-title::after { content: "Done"; margin-left: auto; font-size: 0.85rem; color: var(--rose-deep); font-family: var(--font-body); }
+.step-error { color: var(--rose-deep); font-size: 0.9rem; margin-top: 12px; }
+.pay-summary { font-family: var(--font-head); font-size: 1.2rem; }
+#paypal-buttons { max-width: 420px; min-height: 50px; }
+.btn[disabled], .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.booking-done { background: var(--white); border-radius: 8px; padding: clamp(28px, 5vw, 48px); text-align: center; box-shadow: 0 8px 24px rgba(34, 26, 46, 0.1); }
+.booking-done .script { font-family: var(--font-script); font-size: clamp(3rem, 8vw, 4.5rem); color: var(--rose-deep); line-height: 1; display: block; }

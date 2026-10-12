@@ -26,41 +26,26 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul><li><a href="../">Home</a></li><li><a href="../about/">About</a></li><li><a href="../course/">Course</a></li><li><a href="../blog/">Blog</a></li></ul>
-      <a class="btn" href="../offerings/">Book Now</a>
+      <a class="btn" href="../book/">Book Now</a>
     </nav>
   </div>
 </header>
 <main id="main">
 
-<section class="band-forest hero"><div class="wrap"><div class="paper-title" style="background-image:url(../images/paper-pink-flower.webp);--ar:2.14;--inner:62cqw;--shift:4cqw;--script-size:18cqw;width:min(720px,100%)"><span class="script">Connect</span><p class="sub">Fill in your info and Zan will be in touch</p></div></div></section>
+<section class="band-forest hero"><div class="wrap"><div class="paper-title" style="background-image:url(../images/paper-pink-flower.webp);--ar:2.14;--inner:62cqw;--shift:4cqw;--script-size:18cqw;width:min(720px,100%)"><span class="script">Connect</span><p class="sub">Questions? Zan would love to hear from you</p></div></div></section>
 <section class="band band-lavender">
   <div class="narrow">
-    <!-- Formspree: paste your form ID (the part after /f/ in your Formspree
-         endpoint) into data-formspree. Until then, Submit opens the visitor's
-         email app with their answers filled in. -->
+    <p class="center" style="margin-bottom:28px">Ready for a reading? <a class="btn" href="../book/">Book a Reading</a></p>
+    <!-- General questions. Posts to Formspree (data-formspree); readings are booked on /book/. -->
     <form class="form" method="POST" data-formspree="mbgdggog" data-mailto="info.soulactivism@gmail.com">
-      <input type="hidden" name="_subject" value="New Soul Activism reading request">
+      <input type="hidden" name="_subject" value="New Soul Activism message">
       <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div><label for="name">Name *</label><input id="name" name="name" required autocomplete="name"></div>
       <div><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
-      <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
-      <div><label for="session-date">Preferred session date &amp; time *</label><input id="session-date" name="preferred-session" type="datetime-local" required></div>
-      <div><label for="birth-date">Birth date *</label><input id="birth-date" name="birth-date" type="date" required></div>
-      <div><label for="birth-place">Birth place *</label><input id="birth-place" name="birth-place" required placeholder="City, state/region, country"></div>
-      <div class="full"><label for="reading-type">Reading type *</label>
-        <select id="reading-type" name="reading-type" required>
-          <option value="" disabled selected>Choose a reading</option>
-          <option value="Soul Activism Reading">Soul Activism Reading</option>
-          <option value="Soul Sync">Soul Sync (Intuitive Business Consulting)</option>
-        </select></div>
-      <div class="full"><label for="manifest">What do you want to manifest in the next six months? *</label><textarea id="manifest" name="manifest" required></textarea></div>
-      <div class="full"><label for="blocks">What blocks have you been experiencing? *</label><textarea id="blocks" name="blocks" required></textarea></div>
-      <div class="full consent">
-        <input id="consent" name="consent" type="checkbox" value="I agree" required>
-        <label for="consent">I agree that Soul Activism may use the information in this form to prepare and respond to my reading request. I can withdraw this consent at any time by emailing <a href="mailto:info.soulactivism@gmail.com">info.soulactivism@gmail.com</a>. See the <a href="../policies-and-terms/#privacy-policy">Privacy Policy</a>. *</label>
-      </div>
-      <div class="full"><button class="btn" type="submit">Submit</button>
-        <p class="form-thanks" hidden>Thanks for submitting! Your email app should open with your answers ready to send.</p>
+      <div class="full"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="message">Message *</label><textarea id="message" name="message" required></textarea></div>
+      <div class="full"><button class="btn" type="submit">Send message</button>
+        <p class="form-thanks" hidden>Thanks for reaching out! Your email app should open with your message ready to send.</p>
         <p class="form-note">Prefer email? Write to <a href="mailto:info.soulactivism@gmail.com">info.soulactivism@gmail.com</a>.</p></div>
     </form>
   </div>

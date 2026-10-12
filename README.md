@@ -14,14 +14,16 @@ about/                          About Zan Dean, certifications, FAQ
 course/                         Psychic Development Course (eight weeks) + curriculum
 offerings/                      All services
 consult/                        Soul Sync intuitive business consulting
-connect/                        Contact form
+book/                           Book a Reading: intake form → Google booking → PayPal
+connect/                        General message form
 blog/                           Post index
 post/<slug>/                    Blog posts
 service-page/<slug>/            Service detail pages (start-here-… redirects to soul-activism)
 policies-and-terms/             Disclaimer, refund, accessibility, terms, privacy (anchor links)
 404.html                        Not-found page
 css/style.css                   All styles (palette + fonts at the top)
-js/main.js                      Mobile menu + contact form mailto fallback
+js/main.js                      Mobile menu + contact form
+js/book.js                      Booking flow (step gating, Formspree, PayPal checkout)
 images/                         Site images (WebP)
 CNAME                           www.soulactivism.com
 .nojekyll                       Serve files as-is
@@ -55,6 +57,6 @@ Then open http://localhost:8000
 ## Notes
 
 - **Pricing:** all readings are $200 (Soul Activism AR Reading, Soul Relationships). The Psychic Development Course is $600 and currently marked Ended.
-- **Booking:** each service's "Book Now" opens an email to info.soulactivism@gmail.com with the service name in the subject. Swap in a scheduler link (Calendly, Square, Acuity, PayPal) when ready.
-- **Contact form:** the Connect page asks for name, email, birth date, birth place, reading type (Soul Activism Reading or Soul Sync), what they want to manifest in the next six months, and the blocks they have been experiencing. Put the Formspree form ID in `data-formspree` on the form in `connect/index.html` and it posts to Formspree; with it empty, Submit opens the visitor's mail client with the answers filled in.
+- **Booking:** every "Book Now" goes to `/book/` (service pages preselect the reading with `?reading=`). Step 1 sends the intake answers to Formspree and only then unlocks step 2; step 2 opens the Google appointment page (`https://calendar.app.google/rcR7uYLWj5yqRGf29`) and the client confirms they booked; step 3 is PayPal checkout (Client ID in `data-paypal` on `#booking-flow`), and "You're all set" only appears after PayPal captures the payment, which also sends a "PAID" note to Formspree. Prices live in `PRICES` in `js/book.js` (all $200). Progress survives a page reload within the same browser tab.
+- **Contact form:** `/connect/` is a short general message form (name, email, phone, message) posting to Formspree form `mbgdggog`; readings are booked on `/book/`.
 - **Policies:** the business is named Soul Activism throughout, and a cancellation less than 48 hours before a session forfeits 100% of the fee. Crisis resources list the 988 Suicide & Crisis Lifeline.
